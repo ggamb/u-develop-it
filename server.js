@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql = require('mysql2');
+var dotenv = require('dotenv');
 require('dotenv').config();
 const inputCheck = require('./utils/inputCheck');
 

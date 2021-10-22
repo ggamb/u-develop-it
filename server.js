@@ -9,6 +9,8 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+//test
+
 const db = mysql.createConnection(
     {
       host: 'localhost',

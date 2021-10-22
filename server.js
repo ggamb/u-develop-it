@@ -1,8 +1,6 @@
-const mysql = require("mysql2");
 const express = require('express');
 const inputCheck = require('./utils/inputCheck');
-const connection = require('./db/connection');
-require('dotenv').config()
+const db = require('./db/connection');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -11,33 +9,8 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-<<<<<<< HEAD
-//test
-
-const db = mysql.createConnection(
-    {
-      host: 'localhost',
-      // Your MySQL username,
-      user: 'root',
-      // Your MySQL password
-      password: process.env.password,
-      database: 'election'
-    },
-    console.log('Connected to the election database.')
-);
-
 db.query(`SELECT * FROM candidates`, (err, rows) => {
     console.log(rows);
-=======
-// Connect to database
-const db = mysql.createConnection({
-  host: 'localhost',
-  // Your MySQL username,
-  user: 'root',
-  // Your MySQL password
-  password: process.env.password,
-  database: 'election'
->>>>>>> 7b28cefde4bcd82a372f34f868a043af58d6a48c
 });
 
 // Get all candidates and their party affiliation
